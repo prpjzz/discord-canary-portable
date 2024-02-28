@@ -37,7 +37,7 @@ func init() {
 	}
 
 	// Init app
-	if app, err = portapps.NewWithCfg("discord-ptb-portable", "DiscordPTB", cfg); err != nil {
+	if app, err = portapps.NewWithCfg("discord-canary-portable", "DiscordCanary", cfg); err != nil {
 		log.Fatal().Err(err).Msg("Cannot initialize application. See log file for more info.")
 	}
 }
@@ -46,7 +46,7 @@ func main() {
 	utl.CreateFolder(app.DataPath)
 	electronAppPath := app.ElectronAppPath()
 
-	app.Process = utl.PathJoin(electronAppPath, "DiscordPTB.exe")
+	app.Process = utl.PathJoin(electronAppPath, "DiscordCanary.exe")
 	app.Args = []string{
 		"--user-data-dir=" + app.DataPath,
 	}
@@ -56,7 +56,7 @@ func main() {
 	if cfg.Cleanup {
 		defer func() {
 			regKey := registry.Key{
-				Key:  `HKCU\SOFTWARE\DiscordPTB`,
+				Key:  `HKCU\SOFTWARE\DiscordCanary`,
 				Arch: "32",
 			}
 			if regKey.Exists() {
@@ -65,7 +65,7 @@ func main() {
 				}
 			}
 			utl.Cleanup([]string{
-				path.Join(os.Getenv("APPDATA"), "discordptb"),
+				path.Join(os.Getenv("APPDATA"), "discordcanary"),
 				path.Join(os.Getenv("TEMP"), "Discord Crashes"),
 			})
 		}()
@@ -121,10 +121,10 @@ func main() {
 	}
 
 	// Copy default shortcut
-	shortcutPath := path.Join(utl.StartMenuPath(), "Discord PTB Portable.lnk")
-	defaultShortcut, err := assets.Asset("DiscordPTB.lnk")
+	shortcutPath := path.Join(utl.StartMenuPath(), "Discord Canary Portable.lnk")
+	defaultShortcut, err := assets.Asset("DiscordCanary.lnk")
 	if err != nil {
-		log.Error().Err(err).Msg("Cannot load asset DiscordPTB.lnk")
+		log.Error().Err(err).Msg("Cannot load asset DiscordCanary.lnk")
 	}
 	err = os.WriteFile(shortcutPath, defaultShortcut, 0644)
 	if err != nil {
@@ -136,7 +136,7 @@ func main() {
 		ShortcutPath:     shortcutPath,
 		TargetPath:       app.Process,
 		Arguments:        shortcut.Property{Clear: true},
-		Description:      shortcut.Property{Value: "Discord PTB Portable by Portapps"},
+		Description:      shortcut.Property{Value: "Discord Canary Portable by prpjzz"},
 		IconLocation:     shortcut.Property{Value: app.Process},
 		WorkingDirectory: shortcut.Property{Value: app.AppPath},
 	})
