@@ -11,7 +11,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/portapps/discord-ptb-portable/assets"
+	"github.com/prpjzz/discord-ptb-portable/assets"
 	"github.com/portapps/portapps/v3"
 	"github.com/portapps/portapps/v3/pkg/log"
 	"github.com/portapps/portapps/v3/pkg/registry"
