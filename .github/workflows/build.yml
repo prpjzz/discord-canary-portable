@@ -6,29 +6,6 @@ on:
     tags:
       - '*'
   pull_request:
-  
-  workflow_call:
-    inputs:
-      go_version:
-        required: false
-        type: string
-        default: '1.21.7'
-      node_version:
-        required: false
-        type: string
-        default: '20'
-      java_version:
-        required: false
-        type: string
-        default: '17'
-      ant_version:
-        required: false
-        type: string
-        default: '1.10.14'
-      java_tool_options:
-        required: false
-        type: string
-        default: '-Dfile.encoding=UTF8'
 
 env:
   # don't auto-upgrade the gotoolchain
@@ -39,11 +16,11 @@ jobs:
   run:
     runs-on: windows-latest
     env:
-      GO_VERSION: ${{ inputs.go_version }}
-      NODE_VERSION: ${{ inputs.node_version }}
-      JAVA_VERSION: ${{ inputs.java_version }}
-      ANT_VERSION: ${{ inputs.ant_version }}
-      JAVA_TOOL_OPTIONS: ${{ inputs.java_tool_options }}
+      GO_VERSION: 1.21.7
+      NODE_VERSION: 20
+      JAVA_VERSION: 17
+      ANT_VERSION: 1.10.14
+      JAVA_TOOL_OPTIONS: '-Dfile.encoding=UTF8'
     steps:
       -
         name: Checkout
