@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/kevinburke/go-bindata v3.24.0+incompatible
-	github.com/portapps/portapps/v3 v3.9.0
+	github.com/portapps/portapps/v3 v3.10.0
 )
 
 require (
