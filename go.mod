@@ -5,7 +5,7 @@ go 1.24.0
 toolchain go1.24.1
 
 require (
-	github.com/kevinburke/go-bindata v3.24.0+incompatible
+	github.com/kevinburke/go-bindata 4.0.2
 	github.com/portapps/portapps/v3 v3.16.0
 )
 
