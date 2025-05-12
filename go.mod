@@ -5,7 +5,7 @@ go 1.24.0
 toolchain go1.24.1
 
 require (
-	github.com/kevinburke/go-bindata 4.0.2
+	github.com/kevinburke/go-bindata/v4 v4.0.2
 	github.com/portapps/portapps/v3 v3.16.0
 )
 
@@ -17,7 +17,6 @@ require (
 	github.com/josephspurrier/goversioninfo v1.5.0 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
-	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/rs/zerolog v1.34.0 // indirect
 	golang.org/x/sys v0.33.0 // indirect

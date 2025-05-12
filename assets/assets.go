@@ -250,7 +250,7 @@ type bintree struct {
 }
 
 var _bintree = &bintree{nil, map[string]*bintree{
-	"DiscordCanary.lnk": {discordcanaryLnk, map[string]*bintree{}},
+	"DiscordCanary.lnk":  {discordcanaryLnk, map[string]*bintree{}},
 	"pinned_update.json": {pinned_updateJson, map[string]*bintree{}},
 }}
 
